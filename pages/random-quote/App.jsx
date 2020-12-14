@@ -20,6 +20,9 @@ class QuoteBox extends React.Component{
     componentDidMount(){
         this.newQuote();
     }
+    componentDidUpdate(){
+        document.body.style.backgroundColor = this.state.color;
+    }
     
     newQuote(){
         const random = {...quotes[Math.round(Math.random()*(quotes.length-1))]}
@@ -31,7 +34,6 @@ class QuoteBox extends React.Component{
         }));
     }
     render(){
-        document.body.style.backgroundColor= this.state.color;
         return(
             <div className="wallpaper" style={{backgroundImage:`url(${this.state.img})`}}>
                 <div id="quote-box">
@@ -85,7 +87,7 @@ const quotes = [
         text: "Sinta o poder do verdadeiro gelo",
         author: "Anivia",
         img: "https://lolwp.com/wp-content/uploads/2012/02/Anivia-Classic.jpg",
-        color: "#03b8b8"
+        color: "#74ffff"
     },
     {
         text: "É isso que você chama de Ser civilizado?!",
@@ -132,7 +134,7 @@ const quotes = [
     {
         text: "Essa sede me consome.",
         author: "Tryndamere",
-        img: "https://lolwp.com/wp-content/uploads/2012/02/Warring-Kingdoms-Nidalee.jpg",
+        img: "https://lolwp.com/wp-content/uploads/Tryndamere-Classic-Reworked.jpg",
         color: "#474747"
     }
 ]
