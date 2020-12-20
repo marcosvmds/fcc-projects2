@@ -1,5 +1,5 @@
 //RANDOM QUOTE #1//
-import './styles.scss'
+import '../styles/randomquotes.scss'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -23,7 +23,6 @@ class QuoteBox extends React.Component{
     componentDidUpdate(){
         document.body.style.backgroundColor = this.state.color;
     }
-    
     newQuote(){
         const random = {...quotes[Math.round(Math.random()*(quotes.length-1))]}
         this.setState(()=>({
@@ -37,18 +36,18 @@ class QuoteBox extends React.Component{
         return(
             <div className="wallpaper" style={{backgroundImage:`url(${this.state.img})`}}>
                 <div id="quote-box">
-                <div id="text">
-                    <FontAwesomeIcon icon={faQuoteLeft} className="quoteIcon" style={{color:this.state.color}}/>
+                <p id="text">
+                    <FontAwesomeIcon icon={faQuoteLeft} id="quoteIcon" className="icon" style={{color:this.state.color}}/>
                     {this.state.text}
-                </div>
+                </p>
 
                 <div id="author">- {this.state.author}</div>
 
                 {/* <hr></hr> */}
                 
                 <div className="clickables" style={{borderColor:this.state.color}}>
-                    <a href="twitter.com/intent/tweet" id="tweet-quote" >
-                        <FontAwesomeIcon icon={faTwitterSquare} className="ttIcon" style={{color:this.state.color}}/>
+                    <a href="http://www.twitter.com/intent/tweet" target="_blank" id="tweet-quote" >
+                        <FontAwesomeIcon icon={faTwitterSquare} id="ttIcon" className="icon" style={{color:this.state.color}}/>
                     </a>
                     <button id="new-quote" onClick={this.newQuote} style={{backgroundColor:this.state.color}}>
                         Nova frase
@@ -56,15 +55,14 @@ class QuoteBox extends React.Component{
                 </div>           
              </div>
 
-            </div>
-            
+            </div>           
         )
     }
 }
 
 export default function App(){
     return(
-        <div id="app">
+        <div id="random-quote-app" className="app">
             <QuoteBox />
         </div>
     )
@@ -108,7 +106,7 @@ const quotes = [
         color: "white"
     },
     {
-        text: "Não importa quanto tempo você, mas como você usa.",
+        text: "Não importa quanto tempo você tem, mas como você usa.",
         author: "Ekko",
         img: "https://lolwp.com/wp-content/uploads/2015/05/Sandstorm-Ekko.jpg",
         color: "goldenrod"
