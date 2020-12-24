@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons"
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
+//  VER PQ OS INCONES RENDERIZAM ANTES SCARY, 
 
 function Navigation(){
     return(
@@ -30,7 +31,7 @@ function Description(props){
         )
     } else return (
                 <p className="description">
-                    As páginas neste portfólio inicalmente foram feitas para conclusão dos desafios da
+                    As páginas neste portfólio inicialmente foram feitas para conclusão dos desafios da
                     plataforma <a href="https://www.freecodecamp.org/" target="_blank" className="text-link">FreeCodeCamp</a>.<br/>   
                     Agora eu às modifico e melhoro, estudando e praticando as tecnologias já implementadas ou que pretendo adicionar.<br/>
                     Todo o código está disponível no <a href="http://github.com/marcosvmds" target="_blank" className="text-link">meu GitHub</a>.                          
@@ -147,20 +148,15 @@ function Contacts(props){
 
 const projetos = [
     {
-        path: "RandomQuote",
+        path: "random-quote",
         title: "random champion quotes",
-        preview: "/assets/randomquote.jpg",
+        preview: "/randomquote.jpg",
         frameworks: ["React", "Next"]
     },
     {
-        path: "RandomQuote",
-        title: "random champion quotes",
-        preview: "/assets/randomquote.jpg",
-        frameworks: ["React", "Next"]
-    }, {
-        path: "RandomQuote",
-        title: "random champion quotes",
-        preview: "/assets/randomquote.jpg",
+        path: "markdown-previewer",
+        title: "markdown previewer",
+        preview: "/markdownpreviewer.jpg",
         frameworks: ["React", "Next"]
     }
 ]

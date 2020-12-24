@@ -15,11 +15,6 @@
       height: 60px;
       top:0px;
       left: 0px;
-      a:hover{
-        font-weight: bold;
-        color: white;    
-        background-color: rgba(0,0,0, 0.1);
-      }
       &:hover{ 
         border-bottom: 4px black solid;
       }
@@ -40,6 +35,12 @@
             height: 100%;
             padding: 0px 1.3rem;
             font-size: 1.4rem;
+            color: black;
+            &:hover{
+              font-weight: bold;
+              color: white;    
+              background-color: rgba(0,0,0, 0.1);
+            }
           }
         }
     }
@@ -51,8 +52,7 @@
       justify-content:space-between;
       align-items: center;
       background-color: black;
-      margin-top: 60px;
-      height: 90vh;
+      height: 100vh;
       width:98.5vw;
 
       .titles{
@@ -64,7 +64,7 @@
         //padding-bottom: 8rem;
         hr{   
           width: 100%;
-          margin-top: 20%;        
+          margin-top: 30%;        
           @media(max-width: 720px){
             width: 50%;
           }
@@ -116,6 +116,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    background-color: white;
 
   h2{
     font-size: 3.5rem;
@@ -128,11 +129,13 @@
     justify-content: space-evenly;
     width: 85vw;
     display: grid;
-    grid-template-columns: repeat(auto-fit,320px);
+    grid-template-columns: repeat(auto-fit,380px);
+    grid-template-rows: 320px;
     grid-auto-flow: row;
     grid-gap: 2rem;
     @media(max-width:820px){
       grid-template-columns: repeat(auto-fit, 260px);
+      grid-template-rows: 220px;
     }
 
     .project{      
@@ -151,7 +154,7 @@
           .icon{
             position: absolute;
             left:35%;
-            top:35%;
+            top:30%;
             font-size: 6rem;
             color: transparent;  
             z-index: 5;         
