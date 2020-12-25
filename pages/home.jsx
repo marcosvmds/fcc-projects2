@@ -53,7 +53,6 @@ class Welcome extends React.Component{
                 <hr/>
                 <h1>Marcos Mazzei</h1>
                 <h2>FCC Front-end dev portfolio</h2>
-                <Image src="/racionais.jpg" width="200" height="170"/>
             </div>   
         )
     }
@@ -94,7 +93,7 @@ class Projects extends React.Component {
  
     render(){        
         const projetinhos = this.props.projects.map((p,i)=>{
-            return (<a href={p.path} className="project project-tile" key={i}>
+            return (<a href={p.path} className="project project-tile" key={i} target="_blank">
                         <span className="img-container">
                             <FontAwesomeIcon className="icon" icon={faEye}/>
                             <Image src={p.preview} width="auto" height="auto"
