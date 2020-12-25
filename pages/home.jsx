@@ -148,13 +148,13 @@ const projetos = [
     {
         path: "random-quote",
         title: "random champion quotes",
-        preview: "/randomquote.png",
+        preview: "/randomquote.jpg",
         frameworks: ["React", "Next"]
     },
     {
         path: "markdown-previewer",
         title: "markdown previewer",
-        preview: "/markdownpreviewer.png",
+        preview: "/markdownpreviewer.jpg",
         frameworks: ["React", "Next"]
     }
 ]
