@@ -54,6 +54,7 @@ class Welcome extends React.Component{
                 <hr/>
                 <h1>Marcos Mazzei</h1>
                 <h2>FCC Front-end dev portfolio</h2>
+                <Image src="/racionais.jpg" alt="teste" width="200" height="159"/>
             </div>   
         )
     }
