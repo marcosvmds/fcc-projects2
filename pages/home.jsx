@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons"
 import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-//  VER PQ OS INCONES RENDERIZAM ANTES SCARY, 
 
 function Navigation(){
     return(
@@ -54,7 +53,6 @@ class Welcome extends React.Component{
                 <hr/>
                 <h1>Marcos Mazzei</h1>
                 <h2>FCC Front-end dev portfolio</h2>
-                <Image src="/racionais.jpg" alt="teste" width="200" height="159"/>
             </div>   
         )
     }
@@ -98,8 +96,8 @@ class Projects extends React.Component {
             return (<a href={p.path} className="project project-tile" key={i}>
                         <span className="img-container">
                             <FontAwesomeIcon className="icon" icon={faEye}/>
-                            <img src={p.preview} width="auto" height="auto" 
-                                className="project-img" alt="Project preview img" />
+                            <Image src={p.preview} width="auto" height="auto"
+                                className="project-img"  layout="responsive" alt="Project preview img" />
                         </span>                       
                         <p className="project-title">{p.title}</p>
                     </a>)
