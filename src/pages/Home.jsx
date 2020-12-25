@@ -109,7 +109,7 @@ class Projects extends React.Component {
                 <div className="projects-grid">
                    {projetinhos}                  
                 </div>
-                <a href="#Projects" className="btn">
+                <a href="#projects" className="btn">
                 Return to top</a>
             </section>           
         )
@@ -135,28 +135,26 @@ function Contacts(props){
                     </a>                  
                 </li>
                 <li className="contact">
-                    <a className="contact-link" href="">
+                    <a className="contact-link" 
+                    href="https://www.linkedin.com/in/marcosvmds/"  target="_blank">
                         <p><FontAwesomeIcon icon={faLinkedin} className="icon"/> Linkedin</p>
                     </a>                  
                 </li>
             </ul>
         </section>
     )
-    
 }
-
-
 const projetos = [
     {
         path: "random-quote",
         title: "random champion quotes",
-        preview: "/randomquote.jpg",
+        preview: "/static/randomquote.jpg",
         frameworks: ["React", "Next"]
     },
     {
         path: "markdown-previewer",
         title: "markdown previewer",
-        preview: "/markdownpreviewer.jpg",
+        preview: "/static/markdownpreviewer.jpg",
         frameworks: ["React", "Next"]
     }
 ]
