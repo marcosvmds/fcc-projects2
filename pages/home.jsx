@@ -97,8 +97,8 @@ class Projects extends React.Component {
             return (<a href={p.path} className="project project-tile" key={i}>
                         <span className="img-container">
                             <FontAwesomeIcon className="icon" icon={faEye}/>
-                            <Image src={p.preview} width="auto" height="auto" 
-                                className="project-img"  layout="responsive" alt="Project preview img" />
+                            <img src={p.preview} width="auto" height="auto" 
+                                className="project-img" alt="Project preview img" />
                         </span>                       
                         <p className="project-title">{p.title}</p>
                     </a>)
@@ -148,13 +148,13 @@ const projetos = [
     {
         path: "random-quote",
         title: "random champion quotes",
-        preview: "/static/randomquote.png",
+        preview: "/randomquote.png",
         frameworks: ["React", "Next"]
     },
     {
         path: "markdown-previewer",
         title: "markdown previewer",
-        preview: "/static/markdownpreviewer.png",
+        preview: "/markdownpreviewer.png",
         frameworks: ["React", "Next"]
     }
 ]
