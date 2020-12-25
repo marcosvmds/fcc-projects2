@@ -97,7 +97,7 @@ class Projects extends React.Component {
             return (<a href={p.path} className="project project-tile" key={i}>
                         <span className="img-container">
                             <FontAwesomeIcon className="icon" icon={faEye}/>
-                            <Image src={p.preview} width="auto" height="auto" 
+                            <img src={p.preview} width="auto" height="auto" 
                                 className="project-img"  layout="responsive" alt="Project preview img" />
                         </span>                       
                         <p className="project-title">{p.title}</p>
