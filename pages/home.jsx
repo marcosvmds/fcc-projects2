@@ -155,6 +155,12 @@ const projetos = [
         title: "markdown previewer",
         preview: "/markdownpreviewer.jpg",
         frameworks: ["React", "Next"]
+    },
+    {
+        path: "drum-machine",
+        title: "drum machine",
+        preview: "/drummachine.jpg",
+        frameworks: ["React", "Next"]
     }
 ]
 function Home(props) {
