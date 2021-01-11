@@ -7,7 +7,7 @@ function DrumMachine(){
     const [displayState, setDisplayState] = useState('')
     const padsKeys = ['Q','W','E','A','S','D','Z','X','C'];
     const pads = [];
-    
+     
 
     if(machineState == 'inactive'){      
         for(let i=0; i<9; i++){
@@ -44,9 +44,15 @@ function DrumMachine(){
             setDisplayState('')
         }
     }
+    function pressedDiv(id){
+      let div = document.getElementById(id);
+      div.style.backgroundColor = 'aqua';
+      setTimeout(()=>{div.style.backgroundColor = 'grey'},100)
+    }
     function playAudio(keyTrigger, soundId){
         if(machineState != 'inactive') {       
             document.getElementById(keyTrigger).play();
+            pressedDiv(soundId)
             setDisplayState(soundId)
         } else alert('machine is off');             
     }
@@ -58,9 +64,8 @@ function DrumMachine(){
           return (x.key == key)
         })
           if(padsKeys.includes(key) && div != undefined){
-            console.log(div)
             playAudio(key, div.props.id)
-          } else alert('machine is off')                        
+          }                       
       }
         window.addEventListener('keydown', keyPressed);
         return () => {
@@ -70,6 +75,7 @@ function DrumMachine(){
     
     return( 
         <div className="app-machine">
+          <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
              <div id="drum-machine"> 
             <div className="pads">                      
                 {pads}
