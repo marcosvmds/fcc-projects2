@@ -5,8 +5,9 @@ import '../styles/drummachine.scss'
 function DrumMachine(){
     const [machineState, setMachineState] = useState('inactive');
     const [displayState, setDisplayState] = useState('')
-    const padsKeys = ['Q','W','E','A','S','D','Z','X','C','q','w','e','a','s','d','z','x','c'];
+    const padsKeys = ['Q','W','E','A','S','D','Z','X','C'];
     const pads = [];
+    
 
     if(machineState == 'inactive'){      
         for(let i=0; i<9; i++){
@@ -16,7 +17,8 @@ function DrumMachine(){
         let bank = machineState == 'bankOne' ? bankOne : bankTwo;
         bank.map((pad, i)=>{
             pads[i] = 
-            <div className="drum-pad" onClick={()=>playAudio(pad.keyTrigger, pad.id)} id={pad.id} key={i}>
+            <div className="drum-pad" onClick={()=>playAudio(pad.keyTrigger, pad.id)} 
+                 id={pad.id} key={pad.keyTrigger}>
                 <audio className="clip" src={pad.url} id={pad.keyTrigger}/>
                 {pad.keyTrigger}                
             </div>     
@@ -43,21 +45,27 @@ function DrumMachine(){
         }
     }
     function playAudio(keyTrigger, soundId){
-        if(machineState != 'inactive') {          
+        if(machineState != 'inactive') {       
             document.getElementById(keyTrigger).play();
-            //pegar o id por aqui e dar o set
             setDisplayState(soundId)
         } else alert('machine is off');             
     }
+    
     React.useEffect(() => {
-        window.addEventListener('keydown', (event) => {     
-                if(padsKeys.includes(event.key)){
-                    console.log(event.key)
-                 }           
-          return () => {
-            window.removeEventListener('keydown', handleKeyDown);
-          };
-        });
+      function keyPressed(event){     
+        let key = event.key.toUpperCase();
+        let div = pads.find((x)=>{
+          return (x.key == key)
+        })
+          if(padsKeys.includes(key) && div != undefined){
+            console.log(div)
+            playAudio(key, div.props.id)
+          } else alert('machine is off')                        
+      }
+        window.addEventListener('keydown', keyPressed);
+        return () => {
+          window.removeEventListener('keydown', keyPressed);
+        };
     });
     
     return( 
