@@ -1,5 +1,5 @@
 import ReactDOM from 'react-dom'
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import '../styles/drummachine.scss'
 
 function DrumMachine(){
@@ -17,7 +17,7 @@ function DrumMachine(){
         let bank = machineState == 'bankOne' ? bankOne : bankTwo;
         bank.map((pad, i)=>{
             pads[i] = 
-            <div className="drum-pad" onClick={()=>playAudio(pad.keyTrigger, pad.id)} 
+            <div className="drum-pad" onClick={()=>{playAudio(pad.keyTrigger, pad.id)}} 
                  id={pad.id} key={pad.keyTrigger}>
                 <audio className="clip" src={pad.url} id={pad.keyTrigger}/>
                 {pad.keyTrigger}                
@@ -75,7 +75,6 @@ function DrumMachine(){
     
     return( 
         <div className="app-machine">
-          <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
              <div id="drum-machine"> 
             <div className="pads">                      
                 {pads}
@@ -94,16 +93,6 @@ function DrumMachine(){
         </div>  
     )
 }
-
-function DrumPad(props){  
-    return(
-        <div className="drum-pad" onClick={props.play}>
-            <audio src={props.url} className="clip" id={props.keyTrigger}/>
-            {props.keyTrigger}
-        </div>
-    )
-}
-
 
 export default function App(){
     return (
