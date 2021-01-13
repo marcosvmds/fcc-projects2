@@ -148,19 +148,25 @@ const projetos = [
         path: "random-quote",
         title: "random champion quotes",
         preview: "/randomquote.jpg",
-        frameworks: ["React", "Next"]
+        technologies: ["React", "Next"]
     },
     {
         path: "markdown-previewer",
         title: "markdown previewer",
         preview: "/markdownpreviewer.jpg",
-        frameworks: ["React", "Next"]
+        technologies: ["React", "Next"]
     },
     {
         path: "drum-machine",
         title: "drum machine",
         preview: "/drummachine.jpg",
-        frameworks: ["React", "Next"]
+        technologies: ["React", "Next", "React Hooks"]
+    },
+    {
+        path: "calculator",
+        title: "formula calculator",
+        preview: "/calculator.jpg",
+        technologies: ["React", "Next", "Styled Components"]
     }
 ]
 function Home(props) {

@@ -1,15 +1,11 @@
-#app-calculator{
-    width: 50vw;
-}
-
-#display{grid-area: display;}
+#total-display{grid-area: display;}
+//#display{grid-area: display;}
 #equals{grid-area: equals;}
 #clear {grid-area: clear;}
 #add {grid-area: add;}
 #subtract {grid-area: subtract;}
 #multiply {grid-area: multiply;}
 #divide {grid-area: divide;}
-#display {grid-area: display;}
 #zero {grid-area: zero;}
 #one {grid-area: one;}
 #two {grid-area: two;}
