@@ -16,23 +16,24 @@ function Calculator(){
        if(inputState == '0'){
            if(x == '.') setInputState(inputState+x);
            else if(x != '0') setInputState(x); 
-       } else {
-            if(x=='.' && !isOp(inputState.slice(-1))){
-                for(let i=inputState.length; i>0; i--){
-                    let char = inputState[i];
-                    if(char=='.') break;
-                    if(isOp(char)) {
-                        setInputState(inputState+x)
-                        break;
-                    }
-                    if(i==1) setInputState(inputState+x)
-                } 
-            } else {
-                if(lastAction=='='){
-                    setInputState(x);
-                } else if(!isOp(inputState.slice(-1))) setInputState(inputState+x);                
-            }
-       } 
+       } else if(x=='.'){
+           if(!isOp(inputState.slice(-1))){
+            for(let i=inputState.length; i>0; i--){
+                let char = inputState[i];
+                if(char=='.') break;
+                if(isOp(char)) {
+                    setInputState(inputState+x)
+                    break;
+                }
+                if(i==1) setInputState(inputState+x)
+            } 
+           } else {setInputState(inputState.slice(0,inputState.length-1)+'.')}              
+        } else {
+            if(lastAction=='='){
+                setInputState(x);
+            } setInputState(inputState+x);                
+        }
+       
        setLastAction(x)
    }
    function equal(){
@@ -117,7 +118,7 @@ const AppBase = styled.div`
     flex-direction: column;
     justify-content: center;
     height: 100vh;
-    width: 50vw;
+    width: 90vw;
 `
 const CalculatorGrid = styled.div`
     display: grid;

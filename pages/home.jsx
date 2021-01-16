@@ -3,20 +3,6 @@ import Image from 'next/image'
 import '../styles/home.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons"
-import { faEnvelopeSquare } from "@fortawesome/free-solid-svg-icons";
-import { faLinkedin, faGithubSquare } from "@fortawesome/free-brands-svg-icons";
-
-function Navigation(){
-    return(
-        <nav id="navbar">
-            <ul className="nav-list">
-                <li><a href="#welcome-section">Welcome</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contacts</a></li>
-            </ul>
-        </nav>
-    )
-}
 
 function Description(props){
     if(props.descLang){
@@ -34,8 +20,7 @@ function Description(props){
                     plataforma <a href="https://www.freecodecamp.org/" target="_blank" className="text-link">FreeCodeCamp</a>.<br/>   
                     Agora eu às modifico e melhoro, estudando e praticando as tecnologias já implementadas ou que pretendo adicionar.<br/>
                     Todo o código está disponível no <a href="http://github.com/marcosvmds" target="_blank" className="text-link">meu GitHub</a>.                          
-                </p>   
-                
+                </p>              
     )
 }
 class Welcome extends React.Component{
@@ -114,35 +99,6 @@ class Projects extends React.Component {
         )
     }
 }
-
-function Contacts(props){
-
-    return(
-        <section id="contact">
-        <h2>contacts and social networks</h2>
-        <p className="contact-sub">Cellphone: +55 11 {props.phone}</p>
-            <ul>
-                <li className="contact">
-                    <a className="contact-link" href={"mailto:"+props.email}>
-                    <p><FontAwesomeIcon icon={faEnvelopeSquare} className="icon"/> E-mail</p>
-                    </a>                  
-                </li>
-                <li className="contact">
-                    <a className="contact-link" id="profile-link" 
-                    href="http://github.com/marcosvmds" target="_blank">
-                        <p><FontAwesomeIcon icon={faGithubSquare}/> GitHub</p>
-                    </a>                  
-                </li>
-                <li className="contact">
-                    <a className="contact-link" 
-                    href="https://www.linkedin.com/in/marcosvmds/"  target="_blank">
-                        <p><FontAwesomeIcon icon={faLinkedin} className="icon"/> Linkedin</p>
-                    </a>                  
-                </li>
-            </ul>
-        </section>
-    )
-}
 const projetos = [
     {
         path: "random-quote",
@@ -172,10 +128,10 @@ const projetos = [
 function Home(props) {
     return (
         <>
-            <Navigation />
+            {/* <Navigation /> */}
             <Welcome />
             <Projects projects={projetos} />
-            <Contacts phone="973382281" email="mazzeimarcosv@gmail.com" />   
+            {/* <Contacts phone="973382281" email="mazzeimarcosv@gmail.com" />    */}
         </>        
     )
 }
