@@ -4,78 +4,19 @@ import '../styles/home.scss'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEye } from "@fortawesome/free-regular-svg-icons"
 
-function Description(props){
-    if(props.descLang){
-        return(
-                <p className="description">
-                    The pages in this portfolio were initially made to complete the challenges of the
-                    platform <a href="https://www.freecodecamp.org/" target="_blank" className="text-link">FreeCodeCamp</a>.<br/>
-                    Now I modify and improve them, studying and practicing the technologies already implemented or that I intend to add. <br/>
-                    The all source code it is open in <a href="http://github.com/marcosvmds" target="_blank" className="text-link">my GitHub</a>.
-                </p>                
-        )
-    } else return (
-                <p className="description">
-                    As páginas neste portfólio inicialmente foram feitas para conclusão dos desafios da
-                    plataforma <a href="https://www.freecodecamp.org/" target="_blank" className="text-link">FreeCodeCamp</a>.<br/>   
-                    Agora eu às modifico e melhoro, estudando e praticando as tecnologias já implementadas ou que pretendo adicionar.<br/>
-                    Todo o código está disponível no <a href="http://github.com/marcosvmds" target="_blank" className="text-link">meu GitHub</a>.                          
-                </p>              
+function Description(){
+    return(
+        <p className="description">
+            The pages below were initially made to complete the challenges of the
+            platform <a href="https://www.freecodecamp.org/" target="_blank" className="text-link">FreeCodeCamp</a>.<br/>
+            Checkout these and others projects in <a href="http://github.com/marcosvmds" target="_blank" className="text-link">my full portfolio</a>.
+        </p>                
     )
-}
-class Welcome extends React.Component{
-    constructor(props){
-        super(props);
-        
-        this.state = {
-            lang: false
-        }
-        this.langChange = this.langChange.bind(this)
-    }  
-    titles(){
-        return (
-            <div className="titles">               
-                <hr/>
-                <h1>Marcos Mazzei</h1>
-                <h2>FCC Front-end dev portfolio</h2>
-            </div>   
-        )
-    }
-    langChange(){
-        this.setState(prevState=>({
-            lang: !prevState.lang
-        }))
-    }
-    render(){
-        if(this.state.lang){
-            return (
-                <section id="welcome-section">
-                    <this.titles/>
-                    <span className="descWrapper">
-                        <Description descLang={this.state.lang}/>
-                        <div className="langBtn" onClick={this.langChange}>Para português</div>  
-                    </span>                    
-                </section>                           
-            )
-        } else {
-            return(
-                <section id="welcome-section">
-                    <this.titles/>
-                    <span className="descWrapper">
-                        <Description descLang={this.state.lang}/>
-                        <div className="langBtn" onClick={this.langChange}>To english</div> 
-                    </span>        
-                </section>
-            )
-        }         
-    }    
-}
-
+}                
 class Projects extends React.Component {
     constructor(props){
         super(props)
     }
- 
     render(){        
         const projetinhos = this.props.projects.map((p,i)=>{
             return (<a href={p.path} className="project project-tile" key={i} target="_blank">
@@ -89,12 +30,12 @@ class Projects extends React.Component {
         })
         return(
             <section id="projects">
-                <h2>projects</h2>
+                <span className="descWrapper">
+                    <Description/>
+                </span> 
                 <div className="projects-grid">
                    {projetinhos}                  
                 </div>
-                <a href="#projects" className="btn">
-                Return to top</a>
             </section>           
         )
     }
@@ -128,10 +69,7 @@ const projetos = [
 function Home(props) {
     return (
         <>
-            {/* <Navigation /> */}
-            <Welcome />
             <Projects projects={projetos} />
-            {/* <Contacts phone="973382281" email="mazzeimarcosv@gmail.com" />    */}
         </>        
     )
 }

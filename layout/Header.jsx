@@ -11,11 +11,11 @@ export default function MyHeader(){
                   <Image src="/m-logo-sf-p.png" width="60px" height="38px" alt="temp site logo"/>
                 </a>
             </Link>
-            <ul className="nav-list">     
+            {/* <ul className="nav-list">     
                 <li><a href="/">Home</a></li>
                 <li><a href="/#projects">Projects</a></li>
                 <li><a href="#contacts">Contacts</a></li>
-            </ul>
+            </ul> */}
         </GlobalNavBar>
     )
 }

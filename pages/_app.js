@@ -7,9 +7,7 @@ import Contacts from '../layout/Contacts'
 function MyApp({ Component, pageProps }) { 
     return (
         <>                
-          <Header/>
           <Component {...pageProps}/>
-          <Contacts phone="973382281" email="mazzeimarcosv@gmail.com"/>  
         </>
         )
   }

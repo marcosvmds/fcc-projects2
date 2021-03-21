@@ -1,79 +1,26 @@
 
-  .text-link{
-      color: crimson;
-  }
- 
-  #welcome-section{
-      display: flex;
-      flex-direction: column;
-      justify-content:space-between;
-      align-items: center;
-      background-color: black;
-      height: 100vh;
-      width:98.5vw;
-
-      .titles{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        //padding-top: 10rem;
-        //padding-bottom: 8rem;
-        hr{   
-          width: 100%;
-          margin-top: 30%;        
-          @media(max-width: 720px){
-            width: 50%;
-          }
-        }
-        h1{
-          font-size: 6rem;
-          color: white;
-          padding: 0px 2rem 1rem;
-          text-align: center;
-        }
-       
-        h2{
-            color: crimson;
-            font-style: italic;
-            font-size: 2rem;
-         }
-      }
-      .descWrapper{
-        padding-bottom: 1.5rem; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        .description{
-          text-align: center;
-          padding: 1rem;
-          color: rgb(163, 163, 163);         
-        }
-        .langBtn{
-          width: 15%;
-          text-align: center;
-          font-size: 1rem;
-          color: rgb(163, 163, 163);
-          background-color: black;
-          border: solid 1px rgb(37, 37, 37);
-          cursor:pointer;
-          padding: 0.15rem;          
-          float: right;
-          transition: 1s;
-          &:hover{
-            border: solid 1px crimson
-          }
-        }
-      }
-  }
-
+.text-link{
+    color: crimson;
+}
+.descWrapper{
+    padding-bottom: 1.5rem; 
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .description{
+      text-align: center;
+      padding: 1rem;
+      color: rgb(163, 163, 163);         
+   }
+}
 #projects{
     height: auto;
     margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: white;
+    background-color: black;
 
   h2{
     font-size: 3.5rem;
@@ -102,10 +49,9 @@
       text-align: center; 
       box-shadow: 0px 0px 4px gray;
       border-radius: 4px;
-      border: solid 7px rgb(54, 53, 53);
+      border: solid 7px black;
       border-bottom: none;
       transition: 1s;
-
         .img-container{        
           grid-area: 0/0/1/0;
           overflow: hidden;
@@ -128,26 +74,25 @@
           color:white;
           padding: 0.5rem 0px;
           font-size: 1.2rem;
-          background-color: rgb(54, 53, 53);
+          background-color: black;
           transition: 1s;
         }
         &:hover{
           box-shadow: 0px 0px 10px black;
-          border: solid 7px black;
+          border: solid 7px rgb(54, 53, 53);
           border-bottom: none;
           .icon{
             color: crimson;
           }
           .project-title{
             color: crimson;
-            background-color: black;
+            background-color: rgb(54, 53, 53);
           } 
         }
         
     }
   }
 }
-
 
 .btn{
     background-color: rgb(54, 53, 53);
@@ -164,13 +109,11 @@
       background-color: black;
     }
   }
-
 @media (max-width:1000px){
   .projects-grid{
     grid-template-columns: 1fr 1fr;
   }
 }
-
 @media (max-width:720){
   hr{
     width: 50%;
